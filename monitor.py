@@ -2,8 +2,8 @@ from playwright.sync_api import sync_playwright
 import time
 import requests
 
-BOT_TOKEN = "8633471577:AAFfF68NbQf-7s9NetoMRvGTbAuEukiusKw"
-CHAT_ID = "6911817103"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
