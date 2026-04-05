@@ -30,9 +30,9 @@ def get_job_titles():
         page.goto(URL)
 
 	if "login" in page.url.lower():
-            send_telegram("⚠️ Bot logged out! Please refresh session.")
-            browser.close()
-            return []
+       		send_telegram("⚠️ Bot logged out! Please refresh session.")
+        	browser.close()
+        	return []
 
         page.wait_for_timeout(5000)
 
