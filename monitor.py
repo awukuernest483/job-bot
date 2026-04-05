@@ -3,6 +3,8 @@ import os
 import time
 import requests
 
+os.system("playwright install --with-deps")
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
