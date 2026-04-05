@@ -29,10 +29,10 @@ def get_job_titles():
 
         page.goto(URL)
 
-	if "login" in page.url.lower():
-       		send_telegram("⚠️ Bot logged out! Please refresh session.")
-        	browser.close()
-        	return []
+        if "login" in page.url.lower():
+            send_telegram("⚠️ Bot logged out! Please refresh session.")
+            browser.close()
+            return []
 
         page.wait_for_timeout(5000)
 
@@ -54,10 +54,10 @@ while True:
     new_jobs = [job for job in current_jobs if job not in previous_jobs]
 
     if new_jobs:
-    	for job in new_jobs:
-        	message = f"🚨 New Job: {job}"
-        	print(message)
-        	send_telegram(message)
+        for job in new_jobs:
+            message = f"🚨 New Job: {job}"
+            print(message)
+            send_telegram(message)
 
     previous_jobs = current_jobs
 
